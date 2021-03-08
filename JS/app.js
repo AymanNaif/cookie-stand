@@ -159,7 +159,7 @@ for (let i = 6; i < 12; i++){
 let limaMain=document.getElementById('lima');
 let unorderedListLima=document.createElement('ul');
 let cookiesLima=document.createElement('li');
-cookiesLima.innerText=12+' pm: '+Lima.numberCookie()+ ' Cookies';
+cookiesLima.innerText=12+' pm:  '+Lima.numberCookie()+ ' Cookies';
 unorderedListLima.appendChild(cookiesLima);
 limaMain.appendChild(unorderedListLima);
 
