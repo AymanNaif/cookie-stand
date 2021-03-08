@@ -1,245 +1,129 @@
 'use strict';
 
-let seattle={
-  min:23,
-  max:65,
-  avgCookie:6.3,
-  totalSeattle:0,
-  numberCookie:function(){
-    return Math.floor(Math.random() * ((this.max - this.min + 1) + this.min)*this.avgCookie);}
+// let seattle={
+//   min:23,
+//   max:65,
+//   avgCookie:6.3,
+//   totalSeattle:0,
+//   numberCookie:function(){
+//     return Math.floor(Math.random() * ((this.max - this.min + 1) + this.min)*this.avgCookie);}
+// };
+// let header=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','Daily Location Total'];
+
+function Branch(min,max,avgCookie,total){
+  this.min=min;
+  this.max=max;
+  this.avgCookie=avgCookie;
+  this.total=total;
+}
+Branch.prototype.randomNumber= function(){
+  return Math.floor(Math.random() * ((this.max - this.min + 1) + this.min)*this.avgCookie);
 };
+let seattle=new Branch(23,65,6.3,0);
+let tableSeattle=document.createElement('tr');
 
-for (let i = 6; i < 12; i++){
-  let main=document.getElementById('seattle');
-  let unorderedList=document.createElement('ul');
-  let cookiesSeattle=document.createElement('li');
-  let randomNumber =seattle.numberCookie();
-  cookiesSeattle.innerText=i+' am: '+randomNumber+ ' Cookies';
-  unorderedList.appendChild(cookiesSeattle);
-  main.appendChild(unorderedList);
-  seattle.totalSeattle+=randomNumber;
+for (let i = 0; i < 14; i++){
+  let main=document.getElementById('oneTable');
+  let cookiesSeattle=document.createElement('td');
+  let totalSeattle =seattle.randomNumber();
+  cookiesSeattle.innerText=totalSeattle;
+  tableSeattle.appendChild(cookiesSeattle);
+  main.appendChild(tableSeattle);
+  seattle.total+=totalSeattle;
 }
 
-let seattleMain=document.getElementById('seattle');
-let unorderedListSeattle=document.createElement('ul');
-let cookiesSeattle=document.createElement('li');
-let randomNumber =seattle.numberCookie();
-cookiesSeattle.innerText=12+' pm: '+randomNumber+ ' Cookies';
-unorderedListSeattle.appendChild(cookiesSeattle);
-seattleMain.appendChild(unorderedListSeattle);
-seattle.totalSeattle+=randomNumber;
-
-
-for (let i = 1; i < 8; i++){
-  let main=document.getElementById('seattle');
-  let unorderedList=document.createElement('ul');
-  let cookiesSeattle=document.createElement('li');
-  let randomNumber =seattle.numberCookie();
-  cookiesSeattle.innerText=i+' pm: '+randomNumber+ ' Cookies';
-  unorderedList.appendChild(cookiesSeattle);
-  main.appendChild(unorderedList);
-  seattle.totalSeattle+=randomNumber;
-}
-let seattleRandom=document.getElementById('seattle');
-let unorderedListRandom=document.createElement('ul');
-let cookiesSeattleRandom=document.createElement('li');
-cookiesSeattleRandom.innerText=' Total: '+seattle.totalSeattle+ ' Cookies';
-unorderedListRandom.appendChild(cookiesSeattleRandom);
-seattleRandom.appendChild(unorderedListRandom);
+// below is for the total number of cookies for one branch
+let seattleRandom=document.getElementById('oneTable');
+let tableSeattleRandom=document.createElement('tr');
+let cookiesSeattleRandom=document.createElement('td');
+cookiesSeattleRandom.innerText='the total is '+seattle.total;
+tableSeattleRandom.appendChild(cookiesSeattleRandom);
+seattleRandom.appendChild(tableSeattleRandom);
 
 // end of seattlee city..
 
-let tokyo={
-  min:3,
-  max:24,
-  avgCookie:1.2,
-  totalTokyo:0,
-  numberCookie:function(){
-    return Math.floor(Math.random() * ((this.max - this.min + 1) + this.min)*this.avgCookie);}
-};
+let tokyo=new Branch(3,24,1.2,0);
+let tableTokyo=document.createElement('tr');
 
-for (let i = 6; i < 12; i++){
-  let main=document.getElementById('tokyo');
-  let unorderedList=document.createElement('ul');
-  let cookiesTokyo=document.createElement('li');
-  let randomNumberT =tokyo.numberCookie();
-  cookiesTokyo.innerText=i+' am: '+randomNumberT+ ' Cookies';
-  unorderedList.appendChild(cookiesTokyo);
-  main.appendChild(unorderedList);
-  tokyo.totalTokyo+=randomNumberT;
+for (let i = 0; i < 14; i++){
+  let main=document.getElementById('oneTable');
+  let cookiesTokyo=document.createElement('td');
+  let totalTokyo =tokyo.randomNumber();
+  cookiesTokyo.innerText=totalTokyo;
+  tableTokyo.appendChild(cookiesTokyo);
+  main.appendChild(tableTokyo);
+  tokyo.total+=totalTokyo;
 }
+//below is for the total number of cookies for one branch
+let tokyoRandom=document.getElementById('oneTable');
+let tableTokyoRandom=document.createElement('tr');
+let cookiesTokyoRandom=document.createElement('td');
+cookiesTokyoRandom.innerText='the total is '+tokyo.total;
+tableTokyoRandom.appendChild(cookiesTokyoRandom);
+tokyoRandom.appendChild(tableTokyoRandom);
+// // end of Tokyo City
 
-let main=document.getElementById('tokyo');
-let unorderedList=document.createElement('ul');
-let cookiesTokyo=document.createElement('li');
-let randomNumberT =tokyo.numberCookie();
-cookiesTokyo.innerText=12+' pm: '+randomNumberT+ ' Cookies';
-unorderedList.appendChild(cookiesTokyo);
-main.appendChild(unorderedList);
-tokyo.totalTokyo+=randomNumberT;
+let dubai=new Branch(11,38,3.7,0);
+let tableDubai=document.createElement('tr');
 
-for (let i = 1; i < 8; i++){
-  let main=document.getElementById('tokyo');
-  let unorderedList=document.createElement('ul');
-  let cookiesTokyo=document.createElement('li');
-  let randomNumberT =tokyo.numberCookie();
-  cookiesTokyo.innerText=i+' pm: '+randomNumberT+ ' Cookies';
-  unorderedList.appendChild(cookiesTokyo);
-  main.appendChild(unorderedList);
-  tokyo.totalTokyo+=randomNumberT;
+for (let i = 0; i < 14; i++){
+  let main=document.getElementById('oneTable');
+  let cookiesDubai=document.createElement('td');
+  let totalDubai =dubai.randomNumber();
+  cookiesDubai.innerText=totalDubai;
+  tableDubai.appendChild(cookiesDubai);
+  main.appendChild(tableDubai);
+  dubai.total+=totalDubai;
 }
-let tokyoRandom=document.getElementById('tokyo');
-let unorderedListTRandom=document.createElement('ul');
-let cookiesTokyoRandom=document.createElement('li');
-cookiesTokyoRandom.innerText=' Total: '+tokyo.totalTokyo+ ' Cookies';
-unorderedListTRandom.appendChild(cookiesTokyoRandom);
-tokyoRandom.appendChild(unorderedListTRandom);
-// end of tokyo city
-
-
-let Dubai={
-  min:11,
-  max:38,
-  avgCookie:3.7,
-  totalDubai:0,
-  numberCookie:function(){
-    return Math.floor(Math.random() * ((this.max - this.min + 1) + this.min)*this.avgCookie);}
-};
-
-for (let i = 6; i < 12; i++){
-  let main=document.getElementById('dubai');
-  let unorderedList=document.createElement('ul');
-  let cookiesDubai=document.createElement('li');
-  let randomNumberD =Dubai.numberCookie();
-  cookiesDubai.innerText=i+' am: '+randomNumberD+ ' Cookies';
-  unorderedList.appendChild(cookiesDubai);
-  main.appendChild(unorderedList);
-  Dubai.totalDubai+=randomNumberD;
-}
-
-let dubaiMain=document.getElementById('dubai');
-let unorderedListDubai=document.createElement('ul');
-let cookiesDubai=document.createElement('li');
-let randomNumberD =Dubai.numberCookie();
-cookiesDubai.innerText=12+' pm: '+randomNumberD+ ' Cookies';
-unorderedListDubai.appendChild(cookiesDubai);
-dubaiMain.appendChild(unorderedListDubai);
-Dubai.totalDubai+=randomNumberD;
-
-for (let i = 1; i < 8; i++){
-  let main=document.getElementById('dubai');
-  let unorderedList=document.createElement('ul');
-  let cookiesDubai=document.createElement('li');
-  let randomNumberD =Dubai.numberCookie();
-  cookiesDubai.innerText=i+' pm: '+randomNumberD+ ' Cookies';
-  unorderedList.appendChild(cookiesDubai);
-  main.appendChild(unorderedList);
-  Dubai.totalDubai+=randomNumberD;
-}
-let DubaiRandom=document.getElementById('dubai');
-let unorderedListDRandom=document.createElement('ul');
-let cookiesDubaiRandom=document.createElement('li');
-cookiesDubaiRandom.innerText=' Total: '+Dubai.totalDubai+ ' Cookies';
-unorderedListDRandom.appendChild(cookiesDubaiRandom);
-DubaiRandom.appendChild(unorderedListDRandom);
-
+//below is for the total number of cookies for one branch
+let dubaiRandom=document.getElementById('oneTable');
+let tableDubaiRandom=document.createElement('tr');
+let cookiesDubaiRandom=document.createElement('td');
+cookiesDubaiRandom.innerText='the total is '+dubai.total;
+tableDubaiRandom.appendChild(cookiesDubaiRandom);
+dubaiRandom.appendChild(tableDubaiRandom);
 // end of Dubai City
 
+let paris=new Branch(20,38,2.3,0);
+let tableParis=document.createElement('tr');
 
-let Paris={
-  min:20,
-  max:38,
-  avgCookie:2.3,
-  totalParis:0,
-  numberCookie:function(){
-    return Math.floor(Math.random() * ((this.max - this.min + 1) + this.min)*this.avgCookie);}
-};
-
-for (let i = 6; i < 12; i++){
-  let main=document.getElementById('paris');
-  let unorderedList=document.createElement('ul');
-  let cookiesParis=document.createElement('li');
-  let randomNumberP=Paris.numberCookie();
-  cookiesParis.innerText=i+' am: '+randomNumberP+ ' Cookies';
-  unorderedList.appendChild(cookiesParis);
-  main.appendChild(unorderedList);
-  Paris.totalParis+=randomNumberP;
-
+for (let i = 0; i < 14; i++){
+  let main=document.getElementById('oneTable');
+  let cookiesParis=document.createElement('td');
+  let totalParis =paris.randomNumber();
+  cookiesParis.innerText=totalParis;
+  tableParis.appendChild(cookiesParis);
+  main.appendChild(tableParis);
+  paris.total+=totalParis;
 }
-let parisMain=document.getElementById('paris');
-let unorderedListParis=document.createElement('ul');
-let cookiesParis=document.createElement('li');
-let randomNumberP =Paris.numberCookie();
-cookiesParis.innerText=12+' pm: '+randomNumberP+ ' Cookies';
-unorderedListParis.appendChild(cookiesParis);
-parisMain.appendChild(unorderedListParis);
-Paris.totalParis+=randomNumberP;
+//below is for the total number of cookies for one branch
+let parisRandom=document.getElementById('oneTable');
+let tableParisRandom=document.createElement('tr');
+let cookiesParisRandom=document.createElement('td');
+cookiesParisRandom.innerText='The total is '+paris.total;
+tableParisRandom.appendChild(cookiesParisRandom);
+parisRandom.appendChild(tableParisRandom);
+// // end of Paris City
 
-for (let i = 1; i < 8; i++){
-  let main=document.getElementById('paris');
-  let unorderedList=document.createElement('ul');
-  let cookiesParis=document.createElement('li');
-  let randomNumberP =Paris.numberCookie();
-  cookiesParis.innerText=i+' pm: '+randomNumberP+ ' Cookies';
-  unorderedList.appendChild(cookiesParis);
-  main.appendChild(unorderedList);
-  Paris.totalParis+=randomNumberP;
+let lima=new Branch(2,16,4.6,0);
+let tableLima=document.createElement('tr');
+
+for (let i = 0; i < 14; i++){
+
+  let main=document.getElementById('oneTable');
+  let cookiesLima=document.createElement('td');
+  let totalLima =lima.randomNumber();
+  cookiesLima.innerText=totalLima;
+  tableLima.appendChild(cookiesLima);
+  main.appendChild(tableLima);
+  lima.total+=totalLima;
 }
-let parisRandom=document.getElementById('paris');
-let unorderedListPRandom=document.createElement('ul');
-let cookiesParisRandom=document.createElement('li');
-cookiesParisRandom.innerText=' Total: '+Paris.totalParis+ ' Cookies';
-unorderedListPRandom.appendChild(cookiesParisRandom);
-parisRandom.appendChild(unorderedListPRandom);
-
-
-// end of Paris City
-
-
-let Lima={
-  min:2,
-  max:16,
-  avgCookie:4.6,
-  totalLima:0,
-  numberCookie:function(){
-    return Math.floor(Math.random() * ((this.max - this.min + 1) + this.min)*this.avgCookie);}
-};
-
-for (let i = 6; i < 12; i++){
-  let main=document.getElementById('lima');
-  let unorderedList=document.createElement('ul');
-  let cookiesLima=document.createElement('li');
-  let randomNumberL =Lima.numberCookie();
-  cookiesLima.innerText=i+' am: '+randomNumberL+ ' Cookies';
-  unorderedList.appendChild(cookiesLima);
-  main.appendChild(unorderedList);
-  Lima.totalLima+=randomNumberL;
-
-}
-let limaMain=document.getElementById('lima');
-let unorderedListLima=document.createElement('ul');
-let cookiesLima=document.createElement('li');
-let randomNumberL =Lima.numberCookie();
-cookiesLima.innerText=12+' pm: '+randomNumberL+ ' Cookies';
-unorderedListLima.appendChild(cookiesLima);
-limaMain.appendChild(unorderedListLima);
-Lima.totalLima+=randomNumberL;
-
-
-for (let i = 1; i < 8; i++){
-  let main=document.getElementById('lima');
-  let unorderedList=document.createElement('ul');
-  let cookiesLima=document.createElement('li');
-  let randomNumberL =Lima.numberCookie();
-  cookiesLima.innerText=i+' pm: '+randomNumberL+ ' Cookies';
-  unorderedList.appendChild(cookiesLima);
-  main.appendChild(unorderedList);
-  Lima.totalLima+=randomNumberL;
-}
-let limaRandom=document.getElementById('lima');
-let unorderedListLRandom=document.createElement('ul');
-let cookiesLimaRandom=document.createElement('li');
-cookiesLimaRandom.innerText=' Total: '+Lima.totalLima+ ' Cookies';
-unorderedListLRandom.appendChild(cookiesLimaRandom);
-limaRandom.appendChild(unorderedListLRandom);
+//below is for the total number of cookies for one branch
+let limaRandom=document.getElementById('oneTable');
+let tableLimaRandom=document.createElement('tr');
+let cookiesLimaRandom=document.createElement('td');
+cookiesLimaRandom.innerText='The total is '+lima.total;
+tableLimaRandom.appendChild(cookiesLimaRandom);
+limaRandom.appendChild(tableLimaRandom);
+// end of Lima City
 
