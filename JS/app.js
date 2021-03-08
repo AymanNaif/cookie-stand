@@ -34,11 +34,10 @@ for (let i = 0; i < 14; i++){
 
 // below is for the total number of cookies for one branch
 let seattleRandom=document.getElementById('oneTable');
-let tableSeattleRandom=document.createElement('tr');
-let cookiesSeattleRandom=document.createElement('td');
+let cookiesSeattleRandom=document.createElement('th');
 cookiesSeattleRandom.innerText='the total is '+seattle.total;
-tableSeattleRandom.appendChild(cookiesSeattleRandom);
-seattleRandom.appendChild(tableSeattleRandom);
+tableSeattle.appendChild(cookiesSeattleRandom);
+seattleRandom.appendChild(tableSeattle);
 
 // end of seattlee city..
 
@@ -56,11 +55,10 @@ for (let i = 0; i < 14; i++){
 }
 //below is for the total number of cookies for one branch
 let tokyoRandom=document.getElementById('oneTable');
-let tableTokyoRandom=document.createElement('tr');
-let cookiesTokyoRandom=document.createElement('td');
+let cookiesTokyoRandom=document.createElement('th');
 cookiesTokyoRandom.innerText='the total is '+tokyo.total;
-tableTokyoRandom.appendChild(cookiesTokyoRandom);
-tokyoRandom.appendChild(tableTokyoRandom);
+tableTokyo.appendChild(cookiesTokyoRandom);
+tokyoRandom.appendChild(tableTokyo);
 // // end of Tokyo City
 
 let dubai=new Branch(11,38,3.7,0);
@@ -77,11 +75,10 @@ for (let i = 0; i < 14; i++){
 }
 //below is for the total number of cookies for one branch
 let dubaiRandom=document.getElementById('oneTable');
-let tableDubaiRandom=document.createElement('tr');
 let cookiesDubaiRandom=document.createElement('td');
 cookiesDubaiRandom.innerText='the total is '+dubai.total;
-tableDubaiRandom.appendChild(cookiesDubaiRandom);
-dubaiRandom.appendChild(tableDubaiRandom);
+tableDubai.appendChild(cookiesDubaiRandom);
+dubaiRandom.appendChild(tableDubai);
 // end of Dubai City
 
 let paris=new Branch(20,38,2.3,0);
@@ -98,11 +95,10 @@ for (let i = 0; i < 14; i++){
 }
 //below is for the total number of cookies for one branch
 let parisRandom=document.getElementById('oneTable');
-let tableParisRandom=document.createElement('tr');
 let cookiesParisRandom=document.createElement('td');
 cookiesParisRandom.innerText='The total is '+paris.total;
-tableParisRandom.appendChild(cookiesParisRandom);
-parisRandom.appendChild(tableParisRandom);
+tableParis.appendChild(cookiesParisRandom);
+parisRandom.appendChild(tableParis);
 // // end of Paris City
 
 let lima=new Branch(2,16,4.6,0);
@@ -120,10 +116,21 @@ for (let i = 0; i < 14; i++){
 }
 //below is for the total number of cookies for one branch
 let limaRandom=document.getElementById('oneTable');
-let tableLimaRandom=document.createElement('tr');
 let cookiesLimaRandom=document.createElement('td');
 cookiesLimaRandom.innerText='The total is '+lima.total;
-tableLimaRandom.appendChild(cookiesLimaRandom);
-limaRandom.appendChild(tableLimaRandom);
+tableLima.appendChild(cookiesLimaRandom);
+limaRandom.appendChild(tableLima);
 // end of Lima City
 
+let table= document.getElementById('oneTable'), sumVal=0;
+for (let i=0;i < table.rows.length;i++){
+  sumVal = sumVal + parseInt(table.rows[i].cells[0].innerHTML);
+}
+
+let tableRawSum=document.createElement('tr');
+
+let main=document.getElementById('oneTable');
+let cookiesRawSum=document.createElement('td');
+cookiesRawSum.innerText='The total per hour is '+sumVal;
+tableRawSum.appendChild(cookiesRawSum);
+main.appendChild(tableRawSum);
