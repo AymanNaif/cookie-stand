@@ -136,9 +136,7 @@ for (let i = 1; i < 8; i++){
   unorderedList.appendChild(cookiesParis);
   main.appendChild(unorderedList);
 }
-
 // end of Paris City
-
 
 let Lima={
   min:2,
