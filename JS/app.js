@@ -178,6 +178,7 @@ for(let a=0;a<sumHour.length;a++){
 }
 // the end of footer
 
+
 let totalOfTotalDay=seattle.total+tokyo.total+dubai.total+paris.total+lima.total;
 let totalOfTotalHour=sumHour[0]+sumHour[1]+sumHour[2]+sumHour[3]+sumHour[4]+sumHour[5]+sumHour[6]+sumHour[7]+sumHour[8]+sumHour[9]+sumHour[10]+sumHour[11]+sumHour[12]+sumHour[13];
 
