@@ -38,3 +38,17 @@ font-size: 70px;
 padding-left: 30px;
 padding-top: 50px;
 }
+
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 30px;
+  }
+  
+  th {
+    text-align: left;
+  }
