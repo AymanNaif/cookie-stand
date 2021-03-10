@@ -188,4 +188,3 @@ let td=document.createElement('td');
 createFooter.appendChild(td);
 td.innerText='Total of \n total: '+totalOfTotal;
 // end of Lima City
-
